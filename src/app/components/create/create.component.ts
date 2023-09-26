@@ -1,12 +1,12 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss']
+  selector: 'app-create',
+  templateUrl: './create.component.html',
+  styleUrls: ['./create.component.scss']
 })
-export class AuthComponent {
+export class CreateComponent {
 
   hide = true;
 
@@ -22,4 +22,5 @@ export class AuthComponent {
   login() {
 
   }
+
 }

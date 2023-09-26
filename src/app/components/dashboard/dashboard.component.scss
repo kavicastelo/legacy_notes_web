@@ -1,0 +1,41 @@
+@keyframes folder {
+  0% {
+    transform: rotateY(0deg);
+  }
+  20% {
+    transform: rotateY(90deg);
+  }
+  40% {
+    transform: rotateY(180deg);
+  }
+  80% {
+    transform: rotateY(270deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+p{
+  padding: 3vw 0;
+  text-align: center;
+}
+
+.folder{
+
+  img{
+    width: 100%;
+  }
+  img:hover{
+    animation: 3s folder ease-in-out;
+  }
+
+  a{
+    text-decoration: none;
+    color: var(--light);
+    font-size: 24px;
+  }
+  a:hover{
+    color: var(--secondary);
+  }
+}
