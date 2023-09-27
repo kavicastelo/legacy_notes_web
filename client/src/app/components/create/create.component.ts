@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -6,7 +6,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent {
+export class CreateComponent implements OnInit {
 
   hide = true;
 
@@ -16,11 +16,21 @@ export class CreateComponent {
     ]),
     password: new FormControl(null,[
       Validators.required
+    ]),
+    email: new FormControl(null,[
+      Validators.required
+    ]),
+    believer: new FormControl(null,[
+      Validators.required
     ])
   })
 
-  login() {
-
+  constructor() {
   }
 
+  ngOnInit(): void {
+  }
+
+  create() {
+  }
 }

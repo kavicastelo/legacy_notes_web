@@ -14,6 +14,7 @@ mongoose.set('strictQuery', false);
 
 // =======================================================
 const noteRoute = require('./router/noteRoute');
+const accountRoute = require('./router/accountRoute');
 // =======================================================
 
 const server = http.createServer(app);
@@ -35,4 +36,5 @@ app.get('/',(req, res)=>{
 });
 
 app.use(baseURL+'notes', noteRoute);
+app.use(baseURL+'account', accountRoute);
 

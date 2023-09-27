@@ -5,7 +5,7 @@
       <img src="./assets/images/login.png" alt="login">
     </div>
 
-    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="create()">
       <mat-form-field class="example-full-width">
         <mat-label>Username</mat-label>
         <input matInput formControlName="user" placeholder="Ex. Username">
@@ -22,8 +22,19 @@
         <mat-error *ngIf="!loginForm.hasError('required')">
           Please enter your password
         </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Your Email</mat-label>
+        <input matInput formControlName="email" placeholder="Ex. sample@gmail.com">
         <mat-error *ngIf="loginForm.hasError('required')">
-          Password is <strong>required</strong>
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>believer's Email</mat-label>
+        <input matInput formControlName="believer" placeholder="Ex. believer@gmail.com">
+        <mat-error *ngIf="loginForm.hasError('required')">
+          believer's Email is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <button mat-raised-button color="primary" style="width: 100%">Create Account</button>
