@@ -5,11 +5,11 @@
       <img src="./assets/images/login.png" alt="login">
     </div>
 
-    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="create()">
+    <form class="example-form" [formGroup]="signUpForm" (ngSubmit)="create()">
       <mat-form-field class="example-full-width">
         <mat-label>Username</mat-label>
         <input matInput formControlName="user" placeholder="Ex. Username">
-        <mat-error *ngIf="loginForm.hasError('required')">
+        <mat-error *ngIf="signUpForm.hasError('required')">
           Username is <strong>required</strong>
         </mat-error>
       </mat-form-field>
@@ -19,21 +19,21 @@
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-        <mat-error *ngIf="!loginForm.hasError('required')">
+        <mat-error *ngIf="!signUpForm.hasError('required')">
           Please enter your password
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Your Email</mat-label>
         <input matInput formControlName="email" placeholder="Ex. sample@gmail.com">
-        <mat-error *ngIf="loginForm.hasError('required')">
+        <mat-error *ngIf="signUpForm.hasError('required')">
           Email is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>believer's Email</mat-label>
         <input matInput formControlName="believer" placeholder="Ex. believer@gmail.com">
-        <mat-error *ngIf="loginForm.hasError('required')">
+        <mat-error *ngIf="signUpForm.hasError('required')">
           believer's Email is <strong>required</strong>
         </mat-error>
       </mat-form-field>

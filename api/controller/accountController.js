@@ -43,13 +43,17 @@ const login=(req,resp)=>{
         if(existData!==null){
 
             bcrypt.compare(req.body.password, existData.password, function(err, result) {
-                if(result){
-                    const token = jwt.sign({ username: existData.username, email: existData.email},
-                        process.env.PRIVATE_KEY);
-                    resp.json({data:{status:200,message:'Logged in',token}});
-                }
-                else{
-                    resp.status(401).join({record:'Password is incorrect'});
+                try {
+                    if(result){
+                        const token = jwt.sign({ username: existData.username, email: existData.email},
+                            process.env.PRIVATE_KEY);
+                        resp.json({data:{status:200,message:'Logged in',token}});
+                    }
+                    else{
+                        resp.status(401).json({record:'Password is incorrect!'});
+                    }
+                } catch (e) {
+                    console.log(e);
                 }
             });
 
@@ -57,6 +61,8 @@ const login=(req,resp)=>{
         else{
             resp.status(404).join({record:'User not found'});
         }
+    }).catch(err =>{
+        console.log(err);
     })
 }
 
