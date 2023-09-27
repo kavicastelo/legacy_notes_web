@@ -1,0 +1,19 @@
+.page{
+  background-color: var(--primary);
+  width: 100%;
+  min-height: 100vh;
+  padding: 3vw 1.5vw;
+  text-align: center;
+
+  .note-form{
+    width: 100%;
+
+    .example-full-width{
+      width: 100%;
+
+      textarea{
+        height: 250px;
+      }
+    }
+  }
+}

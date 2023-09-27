@@ -1,0 +1,20 @@
+.page{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  padding: 4vw 1.5vw;
+  background-image: url("../../../../../assets/images/login.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  .content{
+    background-color: rgba(0,0,0,0.4);
+    padding: 1.5vw;
+    border-radius: 25px;
+
+    p{
+      color: var(--primary);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="page">
+    <h1>write a note</h1>
+
+    <form class="note-form" [formGroup]="addForm" (ngSubmit)="add()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Title*</mat-label>
+        <input matInput formControlName="title" placeholder="Title">
+        <mat-error *ngIf="!addForm.hasError('required')">
+          Please enter the title
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Note*</mat-label>
+        <textarea matInput formControlName="note" placeholder="your thought here" ></textarea>
+        <mat-error *ngIf="!addForm.hasError('required')">
+          Please enter the note
+        </mat-error>
+      </mat-form-field>
+
+      <div class="d-flex">
+        <button mat-raised-button color="primary" style="width: 90%; margin-right: 5%">Add new note</button>
+        <button type="reset" mat-raised-button color="accent" style="width: 90%; margin-left: 5%">Clear</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
