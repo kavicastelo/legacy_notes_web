@@ -1,24 +1,35 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NotesService} from "../../../service/notes.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss']
 })
-export class NotesComponent {
+export class NotesComponent implements OnInit {
 
   lock:boolean = true;
 
-  notes = [
-    { id: 1, title: 'Note 1', content: 'This is the content of Note 1.' },
-    { id: 2, title: 'Note 2', content: 'This is the content of Note 2.' },
-    { id: 3, title: 'Note 3', content: 'This is the content of Note 3.' },
-    { id: 4, title: 'Note 4', content: 'This is the content of Note 4.' },
-    { id: 5, title: 'Note 5', content: 'This is the content of Note 5.' },
-    { id: 6, title: 'Note 6', content: 'This is the content of Note 6.' },
-    // Add more mock notes here
-  ];
+  notes:any;
 
+  constructor(private notesService: NotesService,
+              private router: Router) {
+  }
+
+  ngOnInit(): void {
+    this.loadNotes();
+  }
+
+  loadNotes() {
+    this.notesService.getNotes().subscribe(
+      response => {
+        this.notes = response.data.data;
+      }, error => {
+        console.log(error);
+      }
+    )
+  }
 
   unlock() {
     let inputVal = (<HTMLInputElement>document.getElementById('password')).value.toLowerCase();
@@ -32,4 +43,5 @@ export class NotesComponent {
       document.getElementById('password').value = '';
     }
   }
+
 }

@@ -15,6 +15,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotesComponent } from './components/pages/notes/notes.component';
 import { AddNoteComponent } from './components/pages/notes/add-note/add-note.component';
 import { ViewNoteComponent } from './components/pages/notes/view-note/view-note.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ViewNoteComponent } from './components/pages/notes/view-note/view-note.
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

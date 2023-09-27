@@ -12,8 +12,9 @@
     background-color: rgba(0,0,0,0.4);
     padding: 1.5vw;
     border-radius: 25px;
+    white-space: pre-line;
 
-    p{
+    .para{
       color: var(--primary);
     }
   }
