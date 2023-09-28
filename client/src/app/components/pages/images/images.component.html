@@ -1,2 +1,22 @@
 <!--<img [src]="downloadURL | async" alt="Uploaded Image">-->
-<input type="file" (change)="onFileChange($event)">
+<div class="container" style="margin-top: 3vw; margin-bottom: 3vw">
+  <div class="add-image">
+    <input type="file" required (change)="onFileChange($event)">
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let image of images">
+      <div class="card">
+        <img [src]="image" class="card-img-top img-fluid" alt="Image" (click)="openImage(image)">
+        <div class="card-body">
+          <h5 class="card-title">Private Image</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="uploading">
+    <p>Uploading...</p>
+    <div class="spinner"></div>
+  </div>
+</div>

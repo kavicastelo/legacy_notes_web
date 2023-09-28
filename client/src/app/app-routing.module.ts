@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'notes', component: NotesComponent, canActivate: [AuthGuard]},
   {path: 'add-note', component: AddNoteComponent, canActivate: [AuthGuard]},
   {path: 'view-note/:id', component: ViewNoteComponent, canActivate: [AuthGuard]},
-  {path: 'images', component: ImagesComponent}
+  {path: 'images', component: ImagesComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
