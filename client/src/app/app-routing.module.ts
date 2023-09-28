@@ -7,6 +7,7 @@ import {NotesComponent} from "./components/pages/notes/notes.component";
 import {AddNoteComponent} from "./components/pages/notes/add-note/add-note.component";
 import {ViewNoteComponent} from "./components/pages/notes/view-note/view-note.component";
 import {AuthGuard} from "./guards/auth.guard";
+import {ImagesComponent} from "./components/pages/images/images.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'auth', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'notes', component: NotesComponent, canActivate: [AuthGuard]},
   {path: 'add-note', component: AddNoteComponent, canActivate: [AuthGuard]},
   {path: 'view-note/:id', component: ViewNoteComponent, canActivate: [AuthGuard]},
+  {path: 'images', component: ImagesComponent}
 ];
 
 @NgModule({

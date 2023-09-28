@@ -17,6 +17,10 @@ import { AddNoteComponent } from './components/pages/notes/add-note/add-note.com
 import { ViewNoteComponent } from './components/pages/notes/view-note/view-note.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "./environments/environment";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import { ImagesComponent } from './components/pages/images/images.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     DashboardComponent,
     NotesComponent,
     AddNoteComponent,
-    ViewNoteComponent
+    ViewNoteComponent,
+    ImagesComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,9 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
