@@ -9,11 +9,16 @@ import {AngularFireStorage} from "@angular/fire/compat/storage";
 })
 export class ImagesComponent {
 
-  downloadURL: Observable<string>;
+  constructor(private fireStorage:AngularFireStorage){}
 
-  constructor(private storage: AngularFireStorage) {
-    const ref = this.storage.ref('gs://legacy-notes.appspot.com/1.jpg');
-    this.downloadURL = ref.getDownloadURL();
+  async onFileChange(event:any){
+    const file = event.target.files[0]
+    if(file){
+      const path = `private/${file.name}`
+      const uploadTask =await this.fireStorage.upload(path,file)
+      const url = await uploadTask.ref.getDownloadURL()
+      console.log(url)
+    }
   }
 
 }

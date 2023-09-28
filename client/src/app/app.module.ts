@@ -18,9 +18,11 @@ import { ViewNoteComponent } from './components/pages/notes/view-note/view-note.
 import {HttpClientModule} from "@angular/common/http";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {AngularFireModule} from "@angular/fire/compat";
-import {environment} from "./environments/environment";
+import {environment} from "../environments/environment";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import { ImagesComponent } from './components/pages/images/images.component';
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ImagesComponent } from './components/pages/images/images.component';
     HttpClientModule,
     MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFireStorageModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
