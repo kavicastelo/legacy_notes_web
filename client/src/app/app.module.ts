@@ -23,6 +23,8 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import { ImagesComponent } from './components/pages/images/images.component';
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import { VideosComponent } from './components/pages/videos/videos.component';
+import { AudiosComponent } from './components/pages/audios/audios.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
     NotesComponent,
     AddNoteComponent,
     ViewNoteComponent,
-    ImagesComponent
+    ImagesComponent,
+    VideosComponent,
+    AudiosComponent
   ],
   imports: [
     BrowserModule,

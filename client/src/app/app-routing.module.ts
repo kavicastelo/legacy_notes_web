@@ -8,6 +8,8 @@ import {AddNoteComponent} from "./components/pages/notes/add-note/add-note.compo
 import {ViewNoteComponent} from "./components/pages/notes/view-note/view-note.component";
 import {AuthGuard} from "./guards/auth.guard";
 import {ImagesComponent} from "./components/pages/images/images.component";
+import {VideosComponent} from "./components/pages/videos/videos.component";
+import {AudiosComponent} from "./components/pages/audios/audios.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'auth', pathMatch: 'full'},
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path: 'add-note', component: AddNoteComponent, canActivate: [AuthGuard]},
   {path: 'view-note/:id', component: ViewNoteComponent, canActivate: [AuthGuard]},
   {path: 'images', component: ImagesComponent, canActivate: [AuthGuard]},
+  {path: 'videos', component: VideosComponent, canActivate: [AuthGuard]},
+  {path: 'audios', component: AudiosComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
