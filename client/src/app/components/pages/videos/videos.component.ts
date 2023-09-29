@@ -11,6 +11,7 @@ export class VideosComponent {
 
   images: string[] = [];
   uploading = false;
+  lock:boolean = true;
 
   constructor(private fireStorage:AngularFireStorage, private imageService:ImagesService){}
 
@@ -45,6 +46,19 @@ export class VideosComponent {
 
   openImage(url:any) {
     window.open(url);
+  }
+
+  unlock() {
+    let inputVal = (<HTMLInputElement>document.getElementById('password')).value.toLowerCase();
+    const password = 'i have permission to access this folder!';
+    if (inputVal === password) {
+      this.lock = false;
+    }
+    else {
+      alert('Wrong password! You\'re not the person who belongs to this folder!');
+      // @ts-ignore
+      document.getElementById('password').value = '';
+    }
   }
 
 }

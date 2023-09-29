@@ -64,7 +64,7 @@ const startAttendance = (req, res) => {
             });
 
             res.json({ data: { status: 200, message: username, email, believer } });
-        }, 30000); //259200000
+        }, 259200000); //259200000
     }
     catch (e) {
         res.status(403).json({data:{status:403,message:'Invalid token'}});
@@ -86,7 +86,7 @@ const stopAttendance = (req, res) => {
             });
 
             res.json({ data: { status: 200, message: 'You are passed away' } });
-        }, 10000); //259200000
+        }, 86400000); //86400000
     }
     catch (e) {
         console.log(e);

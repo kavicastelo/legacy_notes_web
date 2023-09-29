@@ -20,4 +20,15 @@
     <p>Uploading...</p>
     <div class="spinner"></div>
   </div>
+
+  <div class="page-lock" [ngStyle]="{'display':lock?'block':'none'}">
+    <div class="d-md-flex align-items-center justify-content-center" style="height: 100vh; padding: 0 20px">
+      <img src="./assets/images/folder.png" alt="lock">
+      <div class="lock">
+        <h1>Unlock the folder</h1>
+        <input type="text" id="password">
+        <button (click)="unlock()">unlock</button>
+      </div>
+    </div>
+  </div>
 </div>
