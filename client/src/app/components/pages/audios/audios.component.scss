@@ -1,0 +1,70 @@
+.add-image{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+
+  input {
+    position: relative;
+    height: 40px;
+    width: 200px;
+  }
+
+  input:before {
+    background: #f88cc9;
+    content: 'Upload File...';
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  input:invalid:before { content: 'Please Upload File'; }
+  input:valid:before { content: 'File Uploaded'; background: #2fd148; }
+}
+
+/* Define styles for the loading element */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background overlay */
+  z-index: 9999; /* Ensure the loading element is on top of other content */
+
+  /* Style for the loading spinner */
+  .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+
+  p {
+    margin-top: 16px;
+    font-size: 18px;
+    color: #333;
+  }
+}
+
+/* Keyframes animation for the spinner rotation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
