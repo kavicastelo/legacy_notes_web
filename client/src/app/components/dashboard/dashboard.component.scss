@@ -39,3 +39,30 @@ button{
   bottom: 30px;
   right: 30px;
 }
+
+.attendee{
+  label{
+    font-size: 30px;
+    color: var(--primary);
+  }
+
+  input {
+    position: relative;
+    height: 30px;
+    width: 30px;
+  }
+
+  input:before {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

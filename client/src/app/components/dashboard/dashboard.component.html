@@ -2,6 +2,11 @@
   <p>Hello! Welcome to Kavi's personal secret wallet. If you are not the author, surely you got this after his pass
     away. He trusted you! Never break it !!!</p>
 
+  <div class="attendee">
+    <label for="aliveCheckbox">I'm still alive&nbsp;&nbsp;</label>
+    <input type="checkbox" id="aliveCheckbox" [(ngModel)]="isAlive" (change)="handleCheckboxChange()">
+  </div>
+
   <div class="row">
     <div class="col-12 col-sm-6 col-md-3 folder">
       <a href="/notes">

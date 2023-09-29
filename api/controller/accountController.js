@@ -18,7 +18,7 @@ const signup=(req,resp)=>{
 
                 user.save().then(result=>{
 
-                    const token = jwt.sign({ username: req.body.username, email: req.body.email},
+                    const token = jwt.sign({ username: req.body.username, email: req.body.email, password: req.body.password},
                         process.env.PRIVATE_KEY);
                     resp.json({data:{status:201,message:'Registered',token}});
 
@@ -45,7 +45,7 @@ const login=(req,resp)=>{
             bcrypt.compare(req.body.password, existData.password, function(err, result) {
                 try {
                     if(result){
-                        const token = jwt.sign({ username: existData.username, email: existData.email},
+                        const token = jwt.sign({ username: existData.username, email: existData.email, password: req.body.password},
                             process.env.PRIVATE_KEY);
                         resp.json({data:{status:200,message:'Logged in',token}});
                     }
