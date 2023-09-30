@@ -23,7 +23,7 @@ const reminder = (name, email, pass) => `<!doctype html>
       You are not marked attendance for 3 days. We think you're in well. Please mark your attendance!
     </p>
     <p style="color: dimgray; font-size: 14px; font-family: sans-serif; text-align: left;">
-      Your Wallet Address: <strong>ADDRESS</strong> <br>
+      Your Wallet Address: <strong><a href="https://kavi-castelo-secret-wallet-0001.netlify.app/">https://kavi-castelo-secret-wallet-0001.netlify.app/</a></strong> <br>
       Username: <strong>${name}</strong><br>
       Password: <strong>${pass}</strong><br>
       Folder Lock: <strong>i have permission to access this folder!</strong>
