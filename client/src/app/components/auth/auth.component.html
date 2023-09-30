@@ -29,4 +29,10 @@
       <button mat-raised-button color="primary" style="width: 100%">Authorize</button>
     </form>
   </div>
+
+  <div class="loading" *ngIf="uploading">
+    <p>Loading...</p>
+    <div class="spinner"></div>
+  </div>
+
 </div>

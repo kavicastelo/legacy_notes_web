@@ -13,6 +13,7 @@ import {UserService} from "../../service/user.service";
 export class CreateComponent implements OnInit {
 
   hide = true;
+  uploading = false;
 
   signUpForm = new FormGroup({
     user: new FormControl(null,[
@@ -41,6 +42,7 @@ export class CreateComponent implements OnInit {
   }
 
   create() {
+    this.uploading = true;
     this.userService.signup(
       this.signUpForm.get('user')?.value,
       this.signUpForm.get('password')?.value,
@@ -54,6 +56,7 @@ export class CreateComponent implements OnInit {
       this.openSnackBar('Somethings wrong! try again!','OK');
       console.log(error);
     })
+    this.uploading = false;
   }
 
   openSnackBar(message: string, action: string) {

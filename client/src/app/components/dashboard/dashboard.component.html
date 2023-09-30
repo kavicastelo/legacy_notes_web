@@ -37,4 +37,10 @@
   <button (click)="logout()" mat-fab color="primary" class="add-button" title="Logout">
     <i class="material-icons">power_settings_new</i>
   </button>
+
+  <div class="loading" *ngIf="uploading">
+    <p>Loading...</p>
+    <div class="spinner"></div>
+  </div>
+
 </div>

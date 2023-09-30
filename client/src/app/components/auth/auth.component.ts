@@ -13,6 +13,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class AuthComponent implements OnInit {
 
   hide = true;
+  uploading = false;
 
   loginForm = new FormGroup({
     user: new FormControl(null,[
@@ -36,6 +37,7 @@ export class AuthComponent implements OnInit {
   }
 
   login() {
+    this.uploading = true;
     this.userService.login(
       this.loginForm.get('user')?.value,
       this.loginForm.get('password')?.value
@@ -47,6 +49,7 @@ export class AuthComponent implements OnInit {
       this.openSnackBar('Login Failed! try again!','OK')
       console.log(error);
     })
+    this.uploading = false;
   }
 
   openSnackBar(message: string, action: string) {
