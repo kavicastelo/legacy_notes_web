@@ -51,7 +51,6 @@ export class DashboardComponent {
   }
 
   private async startAttendance(user: any) {
-    this.uploading = true;
     const response = await this.attendanceService.startAttendance(user).toPromise();
     if (response.data.status === 200) {
       this.isAlive = false;
@@ -61,7 +60,6 @@ export class DashboardComponent {
         }
       )
     }
-    this.uploading = false;
   }
 
   private async stopAttendance() {
