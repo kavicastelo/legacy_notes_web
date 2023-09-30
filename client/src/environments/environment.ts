@@ -9,5 +9,6 @@ export const environment = {
     appId: "1:834211346908:web:c98c6ae58a73a059b63719",
     measurementId: "G-H944ZXRR1R"
   },
-  baseUrl:"http://localhost:5000/api/v1/",
+  // baseUrl:"http://localhost:5000/api/v1/",
+  baseUrl:"https://legacy-notes.onrender.com/api/v1/",
 };
