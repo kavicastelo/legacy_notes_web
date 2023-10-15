@@ -5,6 +5,13 @@
       <img src="./assets/images/login.png" alt="login">
     </div>
 
+    <div [ngStyle]="{'display':uploading?'block':'none'}">
+      <div class="loading">
+        <p>Loading...</p>
+        <div class="spinner"></div>
+      </div>
+    </div>
+
     <form class="example-form" [formGroup]="signUpForm" (ngSubmit)="create()">
       <mat-form-field class="example-full-width">
         <mat-label>Username</mat-label>
@@ -39,11 +46,6 @@
       </mat-form-field>
       <button mat-raised-button color="primary" style="width: 100%">Create Account</button>
     </form>
-  </div>
-
-  <div class="loading" *ngIf="uploading">
-    <p>Loading...</p>
-    <div class="spinner"></div>
   </div>
 
 </div>

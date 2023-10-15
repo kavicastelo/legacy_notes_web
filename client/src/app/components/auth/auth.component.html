@@ -5,7 +5,14 @@
       <img src="./assets/images/login.png" alt="login">
     </div>
 
-    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <div [ngStyle]="{'display':uploading?'block':'none'}">
+      <div class="loading">
+        <p>Loading...</p>
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <form class="example-form" [formGroup]="loginForm">
       <mat-form-field class="example-full-width">
         <mat-label>Username</mat-label>
         <input matInput formControlName="user" placeholder="Ex. Username">
@@ -26,13 +33,8 @@
           Password is <strong>required</strong>
         </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary" style="width: 100%">Authorize</button>
+      <button mat-raised-button color="primary" style="width: 100%" (click)="login()">Authorize</button>
     </form>
-  </div>
-
-  <div class="loading" *ngIf="uploading">
-    <p>Loading...</p>
-    <div class="spinner"></div>
   </div>
 
 </div>

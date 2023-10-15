@@ -45,11 +45,12 @@ export class AuthComponent implements OnInit {
       this.openSnackBar('Login Success!','OK')
       this.cookieService.createUser(response.data.token);
       this.route.navigateByUrl('/dashboard');
+      this.uploading = false;
     },error => {
       this.openSnackBar('Login Failed! try again!','OK')
       console.log(error);
+      this.uploading = false;
     })
-    this.uploading = false;
   }
 
   openSnackBar(message: string, action: string) {

@@ -52,11 +52,12 @@ export class CreateComponent implements OnInit {
       this.openSnackBar('Signup Successfully!','OK');
       this.cookieService.createUser(response.data.token);
       this.route.navigateByUrl('/dashboard');
+      this.uploading = false;
     },error => {
       this.openSnackBar('Somethings wrong! try again!','OK');
       console.log(error);
+      this.uploading = false;
     })
-    this.uploading = false;
   }
 
   openSnackBar(message: string, action: string) {
